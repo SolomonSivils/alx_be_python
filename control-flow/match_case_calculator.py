@@ -3,26 +3,28 @@
 num1 = int(input("Enter the first number: "))
 num2 = int(input("Enter the second number: "))
 
-# choose type of operator
-operations = input("Choose the operation (+, -, *, /)")
+# input prompt for the operation
+operation = input("Choose the operation (+, -, *, /)")
 
-# conditions using match case
-match operations:
+# perform operations using match case
+result = None
+# match case statement for operations
+match operation:
     case "+":
-        sum = num1 + num2
-        print(f"The result is {sum}")
+        result = num1 + num2
+        print(f"The result is {result}")
     case "-":
-        difference = num1 - num2
-        print(f"The result is {difference}")
+        result = num1 - num2
+        print(f"The result is {result}")
     case "*":
-        multiplication = num1 * num2
-        print(f"The result is {multiplication}")
+        result = num1 * num2
+        print(f"The result is {result}")
     case "/":
         if num2 == 0:
             print("Cannot divide by zero.")
         else:
-            division = num1 / num2
-            print(f"The result is {division}")
+            result = num1 / num2
+            print(f"The result is {result}")
         
     case _:
         print("Invalid operations")
