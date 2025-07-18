@@ -10,6 +10,7 @@ reminder = ""
 # process the task based on priority and time sensitivity using a match-case statement
 match priority:
     case "high":
+    # check for print reminder if the high priority task is also time-bound
         if time_bound == "yes":
             reminder= f"Reminder: '{task}' is a high priority task that requires immediate attention today!"
         else:
@@ -27,4 +28,5 @@ match priority:
     case _: 
         reminder = f"Note: '{task}' has incorrect priority '{priority}'. Please input one of the following priority (high/medium/low)."
 
+# Provide the customized reminder
 print(reminder)
