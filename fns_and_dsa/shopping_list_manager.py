@@ -14,12 +14,6 @@ def main():
     while True:
         display_menu()
         choice = input("Enter your choice: ").strip()
-        # Convert input string to an integer
-        try:
-            choice = int() 
-        except ValueError:
-            print("Invalid input. Please enter a number between 1 and 4.")
-            continue 
 
         if choice == '1':
             item_to_add= input("Please add the item you want: ")
