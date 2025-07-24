@@ -1,6 +1,6 @@
 # simple interface for managing a shopping list
 
-def menu():
+def display_menu():
     print("Shopping List Manager")
     print("-----" * 4)
     print("Press 1 to add items")
@@ -9,10 +9,11 @@ def menu():
     print("Press 4 to exit")
 
 def main():
+    # implementation of an array shopping_list
     shopping_list = []
     while True:
-        menu()
-        choice = input("Please enter your selection: ")
+        display_menu()
+        choice = input("Enter your selection: ")
         if choice == "1":
             item_to_add= input("Please add the item you want: ")
             shopping_list.append(item_to_add)
@@ -27,6 +28,7 @@ def main():
         elif choice == "3":
             print(shopping_list)
         elif choice == "4":
+            print("Goodbye!")
             exit()
         else:
             print("Invalid selection")
