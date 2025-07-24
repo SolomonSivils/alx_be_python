@@ -9,9 +9,10 @@ def perform_operation(num1, num2, operation):
     elif operation == "multiply":
         return num1 * num2
     elif operation == "divide":
-        if num2 == o: # divide by zero scenario
-            return f"Error! Cannot divide by zero"
-        return num1 / num2
+        # check fo divide by zero scenario
+        if num2 == o: 
+            return f"Error! Cannot divide by zero" # return for divide by zero scenario
+        return num1 / num2 # return for not divide by zero
     else:
         return f"Invalid operation"
     
