@@ -9,7 +9,7 @@ def perform_operation(num1, num2, operation):
     elif operation == "multiply":
         return num1 * num2
     elif operation == "divide":
-        # check fo divide by zero scenario
+        # handling for division by zero, returning a specific message or value that your main.py script can recognize and display appropriately.
         if num2 == o: 
             return f"Error! Cannot divide by zero" # return for divide by zero scenario
         else:
