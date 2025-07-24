@@ -12,7 +12,8 @@ def perform_operation(num1, num2, operation):
         # check fo divide by zero scenario
         if num2 == o: 
             return f"Error! Cannot divide by zero" # return for divide by zero scenario
-        return num1 / num2 # return for not divide by zero
+        else:
+            return num1 / num2 # return for not divide by zero
     else:
         return f"Invalid operation"
     
