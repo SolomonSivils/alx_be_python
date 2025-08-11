@@ -3,16 +3,32 @@ class Book:
         self.title = title
         self.author = author
 
+    def __str__(self):
+        return f"Book: {self.title} by {self.author}"
+
+
+# EBook and PrintBook inherit from Book.
 class EBook(Book):
     def __init__(self, title: str, author: str, file_size: int):
+        # Call the base class constructor to initialize title and author.
         super().__init__(title, author)
         self.file_size = file_size
 
+    def __str__(self):
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
+
+
 class PrintBook(Book):
     def __init__(self, title: str, author: str, page_count: int):
+        # Call the base class constructor to initialize title and author.
         super().__init__(title, author)
         self.page_count = page_count
 
+    def __str__(self):
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+
+
+# The Library class demonstrates composition
 class Library:
     def __init__(self):
         self.books = []
@@ -22,10 +38,4 @@ class Library:
 
     def list_books(self):
         for book in self.books:
-            if isinstance(book, EBook):
-                print(f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB")
-            elif isinstance(book, PrintBook):
-                # The expected output for PrintBook omits the author, so we format it this way.
-                print(f"PrintBook: {book.title}, Page Count: {book.page_count}")
-            else:
-                print(f"Book: {book.title} by {book.author}")
+            print(book)
