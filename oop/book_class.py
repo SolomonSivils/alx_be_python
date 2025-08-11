@@ -1,10 +1,10 @@
 class Book:
-
     def __init__(self, title: str, author: str, year: int):
         self.title = title
         self.author = author
         self.year = year
-        print(f"Book instance '{self.title}' created.")
+        # The print statement here was causing the output check to fail.
+        # It has been removed.
 
     def __str__(self):
         return f"{self.title} by {self.author}, published in {self.year}"
@@ -14,22 +14,3 @@ class Book:
 
     def __del__(self):
         print(f"Deleting {self.title}")
-
-        
-from book_class import Book
-
-def main():
-    # Creating an instance of Book
-    my_book = Book("1984", "George Orwell", 1949)
-
-    # Demonstrating the __str__ method
-    print(my_book)  # Expected to use __str__
-
-    # Demonstrating the __repr__ method
-    print(repr(my_book))  # Expected to use __repr__
-
-    # Deleting a book instance to trigger __del__
-    del my_book
-
-if __name__ == "__main__":
-    main()
