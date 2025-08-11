@@ -5,11 +5,13 @@ class Book:
 
 class EBook(Book):
     def __init__(self, title: str, author: str, file_size: int):
+        # Call the base class constructor to initialize title and author.
         super().__init__(title, author)
         self.file_size = file_size
 
 class PrintBook(Book):
     def __init__(self, title: str, author: str, page_count: int):
+        # Call the base class constructor to initialize title and author.
         super().__init__(title, author)
         self.page_count = page_count
 
