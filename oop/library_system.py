@@ -5,13 +5,11 @@ class Book:
 
 class EBook(Book):
     def __init__(self, title: str, author: str, file_size: int):
-        # Call the base class constructor to initialize title and author.
         super().__init__(title, author)
         self.file_size = file_size
 
 class PrintBook(Book):
     def __init__(self, title: str, author: str, page_count: int):
-        # Call the base class constructor to initialize title and author.
         super().__init__(title, author)
         self.page_count = page_count
 
@@ -27,6 +25,7 @@ class Library:
             if isinstance(book, EBook):
                 print(f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB")
             elif isinstance(book, PrintBook):
-                print(f"PrintBook: {book.title} by {book.author}, Page Count: {book.page_count}")
+                # The expected output for PrintBook omits the author, so we format it this way.
+                print(f"PrintBook: {book.title}, Page Count: {book.page_count}")
             else:
                 print(f"Book: {book.title} by {book.author}")
